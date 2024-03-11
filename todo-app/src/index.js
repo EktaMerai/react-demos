@@ -3,12 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Todo  from './Todo';
+// import Todo  from './Todo';
+import Layout from './components/Layout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from './components/About';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Todo></Todo>
+    {/* <Todo></Todo> */}
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   </React.StrictMode>
 );
 
